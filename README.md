@@ -7,18 +7,19 @@
 [![Hardware](https://img.shields.io/badge/RTX%204090%20%7C%20A100-tested-76B900)]()
 [![Status](https://img.shields.io/badge/status-research-success)]()
 
-**Making large audio–video diffusion models practical on a single GPU.**
-A research project on serving MiniMax-H3 (text → 5-second video with synchronized audio)
-from one workstation, roughly 2.5× faster than the stock serving path.
+**Investigating how to serve large audio–video diffusion models from a single GPU.**
+A research project around MiniMax-H3 (text → 5-second video with synchronized audio).
+In our current single-GPU measurements, the integrated pipeline described here finishes
+a request about 2.5× sooner than the baseline serving path.
 
 ---
 
 ## What this project studies
 
 Serving a model this size from one GPU means its weights cannot stay on the GPU — they are
-copied from main memory to the GPU layer by layer on **every request**. Our central finding is
-that this copying, not the neural-network math, dominates the time. Everything in the
-integrated pipeline follows from that:
+copied from main memory to the GPU layer by layer on **every request**. The evidence we have
+gathered so far consistently points to this copying, rather than the neural-network math, as
+the dominant cost. The pipeline configurations we test are built around that observation:
 
 | Technique | What it does in plain terms |
 |---|---|
@@ -28,15 +29,19 @@ integrated pipeline follows from that:
 
 ## Demo
 
-Same prompt, same seed, baseline vs pipeline:
+Same prompt, same seed — baseline (top) vs integrated pipeline (bottom):
 
 ![Control vs pipeline vs pipeline+Sage](pipeline/demo/trio-0195-montage.jpg)
 
-| Baseline | Integrated pipeline |
-|---|---|
-| <video src="https://github.com/TY-Yang3015/MiniAcc/raw/main/pipeline/demo/vbench-0195-control.mp4" controls width="100%"></video> | <video src="https://github.com/TY-Yang3015/MiniAcc/raw/main/pipeline/demo/vbench-0195-adaln_kitchen.mp4" controls width="100%"></video> |
+**Baseline serving:**
 
-More clips from the pipeline across four research prompts:
+![Baseline demo clip](pipeline/demo/demo-baseline.gif)
+
+**Integrated pipeline (AdaLN + Kitchen INT8):**
+
+![Pipeline demo clip](pipeline/demo/demo-pipeline.gif)
+
+Still frames from the pipeline across four research prompts:
 
 ![Pipeline demo montage](pipeline/demo/pipeline-montage.jpg)
 
@@ -67,18 +72,21 @@ metrics at n=16 and overall consistency at n=4; negative = worse than the pipeli
 | Imaging quality | **−4.71** | −0.46 |
 | Overall consistency | **−29.82** | +0.20 |
 
-**How to read this:** the default configuration is the fastest, and it pays a measurable
-quality cost in overall consistency and imaging sharpness (Sage's 8-bit attention stacked on
-8-bit weights drifts the distilled model off its trained trajectory). If fidelity matters
-more than the last 1.15×, drop Sage and run AdaLN + Kitchen alone — quality there is
-unchanged from baseline within measurement noise. Sol is quality-neutral but slower.
+**How we read this:** in these measurements the default configuration is the fastest, and it
+shows a measurable quality cost in overall consistency and imaging sharpness. One plausible
+explanation is that 8-bit attention stacked on 8-bit weights moves the distilled model away
+from its trained trajectory; we have not proven that mechanism. If fidelity matters more
+than the last 1.15×, dropping Sage gives quality indistinguishable from baseline within our
+measurement noise. Sol is quality-neutral but slower in our tests.
 
-## Why the pieces only work together
+## Why the pieces seem to work only together
 
-Individually, attention-level optimizations changed almost nothing (the copying hid them).
-Once weight traffic halved, attention became a third of the remaining work, and 8-bit
-attention finally paid. Sparse attention (Sol) gets no such rescue: its operator is slower
-than the dense one it replaces. The full analysis is in the local technical report.
+In our individual tests, attention-level optimizations changed almost nothing — the copying
+hid them. Once weight traffic roughly halved, attention became about a third of the
+remaining work, and 8-bit attention showed a measurable benefit. Sparse attention (Sol) sees
+no such effect in our measurements: its operator is slower than the dense one it replaces.
+This is our current interpretation of the data, not a settled theory; the full analysis is
+in the local technical report.
 
 ## Resource budgets
 
@@ -125,3 +133,5 @@ tests/             core unit tests
 - Campaign data, media archives, and full measurement ledgers stay local and are not
   tracked in git; only the pipeline code and demonstration clips live here.
 - This is a research codebase, not a product: interfaces may change between findings.
+- Measurements shown are from a small number of runs on our hardware; treat them as
+  indicative rather than universal.
