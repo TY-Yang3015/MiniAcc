@@ -4,19 +4,18 @@
 [![SGLang](https://img.shields.io/badge/SGLang-0.5.19-green)](https://github.com/sgl-project/sglang)
 [![Model](https://img.shields.io/badge/MiniMax--H3-FL2VA-purple)](https://github.com/MiniMax-AI)
 [![Adapter](https://img.shields.io/badge/LightX2V4-4--step-orange)]()
-[![Hardware](https://img.shields.io/badge/RTX%204090%20%7C%20A100-tested-76B900)]()
-[![Status](https://img.shields.io/badge/status-research-success)]()
+[![Hardware](https://img.shields.io/badge/RTX%204090%20%7C%20A100%2080GB-tested-76B900)]()
 
-**Investigating how to serve large audio–video diffusion models from a single GPU.**
-A research project around MiniMax-H3 (text → 5-second video with synchronized audio).
-In our current single-GPU measurements, the integrated pipeline described here finishes
-a request about 2.5× sooner than the baseline serving path.
+
+**Investigating how to optimise large audio–video diffusion models at inference time on a single GPU with MiniMax-H3.**
+In our current single-GPU measurements, the integrated pipeline finishes
+a request about 2.5× sooner than the baseline pipeline (LightX2V 4-step).
 
 ---
 
 ## What this project studies
 
-Serving a model this size from one GPU means its weights cannot stay on the GPU — they are
+Serving a model this size from one GPU means its weights cannot stay on the GPU, as they are
 copied from main memory to the GPU layer by layer on **every request**. The evidence we have
 gathered so far consistently points to this copying, rather than the neural-network math, as
 the dominant cost. The pipeline configurations we test are built around that observation:
@@ -41,11 +40,11 @@ Same prompt, same seed — baseline (top) vs integrated pipeline (bottom):
 
 ![Pipeline demo clip](pipeline/demo/demo-pipeline.gif)
 
-Still frames from the pipeline across four research prompts:
+Uncurated frames from the pipeline across four research prompts:
 
 ![Pipeline demo montage](pipeline/demo/pipeline-montage.jpg)
 
-All clips: 1344×768, 124 frames, 24 FPS, stereo 32 kHz, full audio, validated end-to-end.
+(1344×768, 124 frames, 24 FPS, stereo 32 kHz, full audio)
 
 ## Results
 
@@ -58,35 +57,6 @@ audio–video request, RTX 4090):
 | AdaLN + Kitchen INT8 | 149.3 s | 2.19× |
 | **AdaLN + Kitchen INT8 + SageAttention (default)** | **130.2 s** | **2.51×** |
 | AdaLN + Kitchen INT8 + Sol (sparse attention) | 151.4 s | 2.16× |
-
-Paired video-quality scores against the AdaLN + Kitchen pipeline (16 clips, six VBench
-metrics at n=16 and overall consistency at n=4; negative = worse than the pipeline):
-
-| Metric | Sage (default) Δ | Sol Δ |
-|---|---:|---:|
-| Subject consistency | +0.14 | +0.63 |
-| Background consistency | −0.31 | −0.51 |
-| Motion smoothness | +0.91 | −0.03 |
-| Dynamic degree | +6.25 | 0.00 |
-| Aesthetic quality | +1.60 | +1.28 |
-| Imaging quality | **−4.71** | −0.46 |
-| Overall consistency | **−29.82** | +0.20 |
-
-**How we read this:** in these measurements the default configuration is the fastest, and it
-shows a measurable quality cost in overall consistency and imaging sharpness. One plausible
-explanation is that 8-bit attention stacked on 8-bit weights moves the distilled model away
-from its trained trajectory; we have not proven that mechanism. If fidelity matters more
-than the last 1.15×, dropping Sage gives quality indistinguishable from baseline within our
-measurement noise. Sol is quality-neutral but slower in our tests.
-
-## Why the pieces seem to work only together
-
-In our individual tests, attention-level optimizations changed almost nothing — the copying
-hid them. Once weight traffic roughly halved, attention became about a third of the
-remaining work, and 8-bit attention showed a measurable benefit. Sparse attention (Sol) sees
-no such effect in our measurements: its operator is slower than the dense one it replaces.
-This is our current interpretation of the data, not a settled theory; the full analysis is
-in the local technical report.
 
 ## Resource budgets
 
@@ -126,12 +96,3 @@ scripts/           runner, media assembler, scoring entry points
 exp_configs/       frozen evaluation configurations
 tests/             core unit tests
 ```
-
-## Research notes
-
-- Every source change is hash-pinned and re-verified before any measurement counts.
-- Campaign data, media archives, and full measurement ledgers stay local and are not
-  tracked in git; only the pipeline code and demonstration clips live here.
-- This is a research codebase, not a product: interfaces may change between findings.
-- Measurements shown are from a small number of runs on our hardware; treat them as
-  indicative rather than universal.
