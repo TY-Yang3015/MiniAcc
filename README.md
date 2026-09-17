@@ -94,5 +94,4 @@ pipeline/          the integrated pipeline: patches, composer, source manifest, 
 miniacc_core/      serving and evaluation harness (timing, resource guards, VBench scoring)
 scripts/           runner, media assembler, scoring entry points
 exp_configs/       frozen evaluation configurations
-tests/             core unit tests
 ```
