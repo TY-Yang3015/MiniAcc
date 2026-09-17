@@ -1,0 +1,13 @@
+{
+  "name": "wolf8-a100-4x",
+  "gpu_count": 4,
+  "per_gpu_memory_gib": 80.0,
+  "allocator_gib": 71.0,
+  "vram_headroom_gib": 8.0,
+  "vram_mode": "normal",
+  "parallel_backend": "independent_jobs",
+  "world_size": 4,
+  "runtime_profile": "a100-independent",
+  "host_headroom_gib": 16.0,
+  "conditioning_mode": "serialized_first_forward"
+}

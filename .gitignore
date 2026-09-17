@@ -216,3 +216,49 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+execution_plan.pdf
+
+AGENTS.md
+DECISIONS.md
+STAGES.md
+BENCHMARKS.md
+DESCRIPTION.md
+EXPERIMENTS.md
+
+data
+artifacts
+results
+report
+.local
+frozen-first-job.json
+
+# MiniAcc experiment outputs — local only; only the integrated pipeline code is tracked
+outputs/
+stage1/*
+!stage1/eval.yaml
+stage2/
+stage3/
+stage4/*
+!stage4/pipeline/
+!stage4/pipeline/**
+*.mp4
+
+# Stage 1/2 experiment scripts (local only)
+scripts/assemble_sglang_timing.py
+scripts/assemble_stage1_final16.py
+scripts/assemble_stage2_comfy.py
+scripts/assemble_stage2_fasth3.py
+scripts/install_sglang_*
+scripts/prepare_stage3.py
+scripts/run_comfy_*
+scripts/run_fasth3_*
+scripts/run_sglang_h3_remote.sh
+scripts/run_stage1_final16_scoring.sh
+scripts/stage2_speed_summary.py
+scripts/validate_stage1_final16.py
+scripts/wolf8_*.sh
+
+# Result/history documents (local only)
+docs/benchmarks-history.md
+docs/decisions-history.md

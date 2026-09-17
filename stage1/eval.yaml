@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "name": "miniacc-stage1-eval-v1",
+  "purpose": "stage1-development-funnel",
+  "created_utc": null,
+  "creation_provenance": "late_transcription from pre-existing frozen manifest after Q0 scoring; not pre-score evidence",
+  "source_manifest": "data/stage1/vbench_dev_manifest.json",
+  "source_manifest_sha256": "4bf524bd674c20287b18cbc16745c84b1e6f48e999a1a6c89331cf0df14efefb",
+  "prompt_order": "first 16 entries of pre-existing frozen deterministic ordering; no outcome reselection",
+  "prompt_ids": [
+    "vbench-0195",
+    "vbench-0302",
+    "vbench-0846",
+    "vbench-0749",
+    "vbench-0256",
+    "vbench-0296",
+    "vbench-0780",
+    "vbench-0721",
+    "vbench-0252",
+    "vbench-0326",
+    "vbench-0801",
+    "vbench-0732",
+    "vbench-0175",
+    "vbench-0328",
+    "vbench-0856",
+    "vbench-0712"
+  ],
+  "prompts": [
+    {
+      "id": "vbench-0195",
+      "prompt_en": "A person is squat",
+      "stratum": "people"
+    },
+    {
+      "id": "vbench-0302",
+      "prompt_en": "a dog enjoying a peaceful walk",
+      "stratum": "motion_objects"
+    },
+    {
+      "id": "vbench-0846",
+      "prompt_en": "sky",
+      "stratum": "scenes"
+    },
+    {
+      "id": "vbench-0749",
+      "prompt_en": "A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh",
+      "stratum": "complex"
+    },
+    {
+      "id": "vbench-0256",
+      "prompt_en": "A person is sailing",
+      "stratum": "people"
+    },
+    {
+      "id": "vbench-0296",
+      "prompt_en": "a bird building a nest from twigs and leaves",
+      "stratum": "motion_objects"
+    },
+    {
+      "id": "vbench-0780",
+      "prompt_en": "art gallery",
+      "stratum": "scenes"
+    },
+    {
+      "id": "vbench-0721",
+      "prompt_en": "Macro slo-mo. Slow motion cropped closeup of roasted coffee beans falling into an empty bowl.",
+      "stratum": "complex"
+    },
+    {
+      "id": "vbench-0252",
+      "prompt_en": "A person is peeling apples",
+      "stratum": "people"
+    },
+    {
+      "id": "vbench-0326",
+      "prompt_en": "a giraffe bending down to drink water from a river",
+      "stratum": "motion_objects"
+    },
+    {
+      "id": "vbench-0801",
+      "prompt_en": "corridor",
+      "stratum": "scenes"
+    },
+    {
+      "id": "vbench-0732",
+      "prompt_en": "A boat sailing leisurely along the Seine River with the Eiffel Tower in background by Vincent van Gogh",
+      "stratum": "complex"
+    },
+    {
+      "id": "vbench-0175",
+      "prompt_en": "A person is shooting goal (soccer)",
+      "stratum": "people"
+    },
+    {
+      "id": "vbench-0328",
+      "prompt_en": "a giraffe running to join a herd of its kind",
+      "stratum": "motion_objects"
+    },
+    {
+      "id": "vbench-0856",
+      "prompt_en": "train station platform",
+      "stratum": "scenes"
+    },
+    {
+      "id": "vbench-0712",
+      "prompt_en": "Campfire at night in a snowy forest with starry sky in the background.",
+      "stratum": "complex"
+    }
+  ],
+  "tiers": {
+    "nested": [
+      4,
+      8,
+      16
+    ],
+    "tier4_prompt_ids": [
+      "vbench-0195",
+      "vbench-0302",
+      "vbench-0846",
+      "vbench-0749"
+    ],
+    "tier8_prompt_ids": [
+      "vbench-0195",
+      "vbench-0302",
+      "vbench-0846",
+      "vbench-0749",
+      "vbench-0256",
+      "vbench-0296",
+      "vbench-0780",
+      "vbench-0721"
+    ],
+    "tier16_prompt_ids": [
+      "vbench-0195",
+      "vbench-0302",
+      "vbench-0846",
+      "vbench-0749",
+      "vbench-0256",
+      "vbench-0296",
+      "vbench-0780",
+      "vbench-0721",
+      "vbench-0252",
+      "vbench-0326",
+      "vbench-0801",
+      "vbench-0732",
+      "vbench-0175",
+      "vbench-0328",
+      "vbench-0856",
+      "vbench-0712"
+    ]
+  },
+  "seeds": [
+    20260909
+  ],
+  "metrics": [
+    "subject_consistency",
+    "background_consistency",
+    "motion_smoothness",
+    "dynamic_degree",
+    "aesthetic_quality",
+    "imaging_quality",
+    "overall_consistency"
+  ],
+  "custom_input_metrics": [
+    "subject_consistency",
+    "background_consistency",
+    "motion_smoothness",
+    "dynamic_degree",
+    "aesthetic_quality",
+    "imaging_quality"
+  ],
+  "standard_metadata_metrics": [
+    "overall_consistency"
+  ],
+  "normalization": {
+    "subject_consistency": [
+      0.1462,
+      1.0
+    ],
+    "background_consistency": [
+      0.2615,
+      1.0
+    ],
+    "motion_smoothness": [
+      0.706,
+      0.9975
+    ],
+    "dynamic_degree": [
+      0.0,
+      1.0
+    ],
+    "aesthetic_quality": [
+      0.0,
+      1.0
+    ],
+    "imaging_quality": [
+      0.0,
+      1.0
+    ],
+    "overall_consistency": [
+      0.0,
+      0.364
+    ]
+  },
+  "alert": {
+    "normalized_points": 5,
+    "action": "paired investigation/alert only; not rejection"
+  },
+  "workload": {
+    "width": 1344,
+    "height": 768,
+    "frames": 124,
+    "fps": 24,
+    "task": "t2va",
+    "audio_required": true,
+    "audio_rate_hz": 32000,
+    "audio_channels": 2,
+    "audio_generation": "joint",
+    "decode_and_mux_in_e2e": true,
+    "batch_size": 1,
+    "prompt_policy": "original VBench prompt verbatim"
+  },
+  "timing": {
+    "e2e_includes": [
+      "encoding",
+      "denoising",
+      "audio_decode",
+      "video_decode",
+      "mux",
+      "output_materialization"
+    ],
+    "report": [
+      "individual E2E",
+      "median",
+      "range",
+      "memory",
+      "transfers"
+    ],
+    "cold_cache_compile_separate": true,
+    "warm_unique_input_required": true,
+    "p95": false,
+    "note": "4/8/16 do not support p95 claims; process-cold must not be labeled warm"
+  },
+  "reference": {
+    "role": "original BF16 Q0 quality reference, not speed denominator",
+    "model_id": "MiniMaxAI/MiniMax-H3",
+    "revision": "42ed227ee7df40d41602854ae760620d6eb651fe",
+    "precision": "BF16",
+    "steps": 49,
+    "video_shift": 12.0,
+    "audio_shift": 3.0,
+    "runtime": "wolf8 .local/wolf8-venv; Comfy source hash recorded in existing artifacts",
+    "command": "local_probe.py --family comfyui-base --diffusion-name minimax_h3_fl2va_bf16.safetensors --clip-name qwen3vl_32b_minimax_h3_bf16.safetensors --steps 49 --video-shift 12 --audio-shift 3 --file-backed-dit",
+    "cached_clips": 16,
+    "expansion": "owner-approved final16 expansion completed: four cached clips reused and twelve missing clips generated at seed 20260909"
+  },
+  "coverage_limitations": "First four are the pre-existing deterministic first-four set (people/motion_objects/scenes/complex) and do not guarantee fast-motion or camera/compositional coverage; no outcome-based reselection.",
+  "no_claims": [
+    "official VBench total",
+    "scalar quality total",
+    "p95",
+    "formal equivalence"
+  ],
+  "creation_timestamp_status": "not recorded; late transcription artifact created after Q0 scoring",
+  "updated_utc": "2026-09-12T02:17:14Z"
+}

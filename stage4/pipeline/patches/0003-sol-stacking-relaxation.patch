@@ -1,0 +1,28 @@
+--- a/sglang/multimodal_gen/runtime/pipelines_core/stages/model_specific_stages/minimax_h3/stages/denoising.py
++++ b/sglang/multimodal_gen/runtime/pipelines_core/stages/model_specific_stages/minimax_h3/stages/denoising.py
+@@ -151,9 +151,22 @@
+ 
+     if conflicts:
+         unique_conflicts = list(dict.fromkeys(conflicts))
+-        raise ValueError(
+-            "MINIACC_STAGE3_SOL is isolated from " + ", ".join(unique_conflicts)
+-        )
++        if os.environ.get("MINIACC_STAGE4_ADALN_KITCHEN") == "1":
++            blocked = [c for c in unique_conflicts if c not in ("quantization", "AdaLN cache")]
++            if not blocked:
++                logger.info(
++                    "stage4_composition_marker sol_admitted_with=%s under MINIACC_STAGE4_ADALN_KITCHEN",
++                    ",".join(unique_conflicts),
++                )
++                unique_conflicts = []
++            else:
++                raise ValueError(
++                    "MINIACC_STAGE3_SOL is isolated from " + ", ".join(blocked)
++                )
++        if unique_conflicts:
++            raise ValueError(
++                "MINIACC_STAGE3_SOL is isolated from " + ", ".join(unique_conflicts)
++            )
+ 
+ 
+ def _sol_dispatch_count() -> int:

@@ -1,0 +1,241 @@
+{
+  "status": "v2_guarded_warmup_then_clean_timing_ready_not_model_admitted",
+  "recorded_utc": "2026-09-16T10:58:38.837654+00:00",
+  "v1_deployment_sha256": "d5546ad0615fb58d2fce097eca76d4596a197c2de60cab987921bc995d98a049",
+  "patch_sha256": "cf38a6dfe3d94764960b1e42b9f5d922367dddbaf67b10afa0512c6cc29f227e",
+  "exact_reapplication": true,
+  "mode_preserved": true,
+  "installed": [
+    {
+      "relative_path": "sglang/multimodal_gen/configs/sample/minimax_h3.py",
+      "sha256": "8fab96d013af2ccdde1741795a33dae10b7eb62dfcbf4beeade236c6f41b1703",
+      "before_sha256": "18af182ad5f8afa61f179d17df9f9b5114a8fce54a4f2f9ea30cc388924312ae",
+      "mode": "0o777",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/integration/stage/sglang/multimodal_gen/configs/sample/minimax_h3.py",
+      "v1_sha256": "8fab96d013af2ccdde1741795a33dae10b7eb62dfcbf4beeade236c6f41b1703"
+    },
+    {
+      "relative_path": "sglang/multimodal_gen/runtime/layers/attention/backends/flash_attn.py",
+      "sha256": "399026ff1256be2acf8a20b953434aa2289f6cd51cc850662e5a0bb4960582c3",
+      "before_sha256": "8f911420e929e52131d95e3414135eaf3dba0c703ddcb1bf6a4887b6e7e52379",
+      "mode": "0o777",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/integration/stage/sglang/multimodal_gen/runtime/layers/attention/backends/flash_attn.py",
+      "v1_sha256": "399026ff1256be2acf8a20b953434aa2289f6cd51cc850662e5a0bb4960582c3"
+    },
+    {
+      "relative_path": "sglang/multimodal_gen/runtime/layers/attention/backends/sage_attn_h3.py",
+      "sha256": "51a8d3ed7a5f714a42638d51a2afe81f4088724ebb38933ac333f684399df534",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/integration/stage/sglang/multimodal_gen/runtime/layers/attention/backends/sage_attn_h3.py",
+      "v1_sha256": "3db6b5ece43f51414b170b02b18c8f9e7976a7d523c14e9b3cf907c95cd2e7da"
+    },
+    {
+      "relative_path": "sglang/multimodal_gen/runtime/models/dits/minimax_h3.py",
+      "sha256": "e84e3c7a4ccc3ce410a254870d1f9b57395bbfe82124c5099ea64346b2a5904b",
+      "before_sha256": "4ee8ea794411146d34f6a8068a1ebae94f0188845ad5bf16fca61d158f0414fe",
+      "mode": "0o777",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/integration/stage/sglang/multimodal_gen/runtime/models/dits/minimax_h3.py",
+      "v1_sha256": "0a2d6f73042970980ae6ca71af0228d2d86dab04f81c0f157293538c8fc18c6e"
+    },
+    {
+      "relative_path": "sglang/multimodal_gen/runtime/models/dits/query_merge.py",
+      "sha256": "126fde912ab08bc3a1164729f949929ee9167a3d701c25a62d613ca654954d65",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/integration/stage/sglang/multimodal_gen/runtime/models/dits/query_merge.py",
+      "v1_sha256": "b5b484523957cc3802a3836147cfa1c9b8dcb56db51558c73237a9b4f3aedcad"
+    },
+    {
+      "relative_path": "sglang/multimodal_gen/runtime/pipelines_core/stages/model_specific_stages/minimax_h3/sampler.py",
+      "sha256": "f1a0a6c3d24bbdba08fff0616eec8521479a67a4578b77b86e08787c3a067b17",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/integration/stage/sglang/multimodal_gen/runtime/pipelines_core/stages/model_specific_stages/minimax_h3/sampler.py",
+      "v1_sha256": "f1a0a6c3d24bbdba08fff0616eec8521479a67a4578b77b86e08787c3a067b17"
+    },
+    {
+      "relative_path": "sglang/multimodal_gen/runtime/pipelines_core/stages/model_specific_stages/minimax_h3/stages/denoising.py",
+      "sha256": "486bd6f0efcfce8d21f7094f195bbe39fff02eb1635faaed7ae36f7462503f07",
+      "before_sha256": "cb323b0140833b1de7854de8528fe855a6c88d0bcb71acfebdb60ec2e1c89438",
+      "mode": "0o777",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/integration/stage/sglang/multimodal_gen/runtime/pipelines_core/stages/model_specific_stages/minimax_h3/stages/denoising.py",
+      "v1_sha256": "2bac36c5f1854ba34d527b64432947590ea281e115b91f887732f01783fe46c5"
+    },
+    {
+      "relative_path": "sglang/multimodal_gen/runtime/utils/stage3_followup.py",
+      "sha256": "6b6e2aa6a8d32b63c137c6e5529abb64369b6b16be49cef9dc4681b238bf9c42",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/integration/stage/sglang/multimodal_gen/runtime/utils/stage3_followup.py",
+      "v1_sha256": "1be92e9cffad0ee64e04fddb5e7fd858f678b9c791b3df6190bb583c0b8fa068"
+    },
+    {
+      "relative_path": "sageattention/__init__.py",
+      "sha256": "9b178247cd22cc2c00114f445ee711c229745193ecda98d397a051e6f889326a",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/__init__.py",
+      "v1_sha256": "9b178247cd22cc2c00114f445ee711c229745193ecda98d397a051e6f889326a"
+    },
+    {
+      "relative_path": "sageattention/_fused.cpython-312-x86_64-linux-gnu.so",
+      "sha256": "46873dd975a1b30f116102009e77de39e06be9cf7af28f497b0664ff6be40b35",
+      "before_sha256": null,
+      "mode": "0o775",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/_fused.cpython-312-x86_64-linux-gnu.so",
+      "v1_sha256": "46873dd975a1b30f116102009e77de39e06be9cf7af28f497b0664ff6be40b35"
+    },
+    {
+      "relative_path": "sageattention/_qattn_sm80.cpython-312-x86_64-linux-gnu.so",
+      "sha256": "89ac0778d5f21687a76c69ef1bfcd7fb9a3cf02c7c3dd4c8d056bec6c978f46a",
+      "before_sha256": null,
+      "mode": "0o775",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/_qattn_sm80.cpython-312-x86_64-linux-gnu.so",
+      "v1_sha256": "89ac0778d5f21687a76c69ef1bfcd7fb9a3cf02c7c3dd4c8d056bec6c978f46a"
+    },
+    {
+      "relative_path": "sageattention/_qattn_sm89.cpython-312-x86_64-linux-gnu.so",
+      "sha256": "7dabd833a94543306ed99201e34537e8227468293fc0177fe015461adec5e5ce",
+      "before_sha256": null,
+      "mode": "0o775",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/_qattn_sm89.cpython-312-x86_64-linux-gnu.so",
+      "v1_sha256": "7dabd833a94543306ed99201e34537e8227468293fc0177fe015461adec5e5ce"
+    },
+    {
+      "relative_path": "sageattention/core.py",
+      "sha256": "e475182fc55d6a683499e1eb4d8886fc06e050ed938d8563b090773eede2a99e",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/core.py",
+      "v1_sha256": "e475182fc55d6a683499e1eb4d8886fc06e050ed938d8563b090773eede2a99e"
+    },
+    {
+      "relative_path": "sageattention/fa3_wrapper.py",
+      "sha256": "53813a192b9d64b49cf72179aadbce39c67c70c00cae2331ed273887c6a58af9",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/fa3_wrapper.py",
+      "v1_sha256": "53813a192b9d64b49cf72179aadbce39c67c70c00cae2331ed273887c6a58af9"
+    },
+    {
+      "relative_path": "sageattention/quant.py",
+      "sha256": "86bf415d4d24793a591c2a056e60f41b4bc579519ac7a875e484a65816940bf7",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/quant.py",
+      "v1_sha256": "86bf415d4d24793a591c2a056e60f41b4bc579519ac7a875e484a65816940bf7"
+    },
+    {
+      "relative_path": "sageattention/sm80_compile.py",
+      "sha256": "b307d836a8580f3731cfd8a7774f70faec984c869e5cac1af9086d43fcdff29b",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/sm80_compile.py",
+      "v1_sha256": "b307d836a8580f3731cfd8a7774f70faec984c869e5cac1af9086d43fcdff29b"
+    },
+    {
+      "relative_path": "sageattention/sm89_compile.py",
+      "sha256": "dd5e0ebf92f2662a85d24cee5c984fe6ba114e610253b4bd339af5e3d5da97c9",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/sm89_compile.py",
+      "v1_sha256": "dd5e0ebf92f2662a85d24cee5c984fe6ba114e610253b4bd339af5e3d5da97c9"
+    },
+    {
+      "relative_path": "sageattention/sm90_compile.py",
+      "sha256": "e76b17ed213b41a6fba7cef3e3f0731ceb1669d852b90c6ca1a57e14c580035d",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/sm90_compile.py",
+      "v1_sha256": "e76b17ed213b41a6fba7cef3e3f0731ceb1669d852b90c6ca1a57e14c580035d"
+    },
+    {
+      "relative_path": "sageattention/triton/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/triton/__init__.py",
+      "v1_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "relative_path": "sageattention/triton/attn_qk_int8_block_varlen.py",
+      "sha256": "d95ef1c80e68cb11e39900ea9b2a41a96c7106544f3f0d0df45cf196dc821543",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/triton/attn_qk_int8_block_varlen.py",
+      "v1_sha256": "d95ef1c80e68cb11e39900ea9b2a41a96c7106544f3f0d0df45cf196dc821543"
+    },
+    {
+      "relative_path": "sageattention/triton/attn_qk_int8_per_block.py",
+      "sha256": "f7563994203a2bb95282ac3474beb8df59391d2b1c268b8757477cc59203250b",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/triton/attn_qk_int8_per_block.py",
+      "v1_sha256": "f7563994203a2bb95282ac3474beb8df59391d2b1c268b8757477cc59203250b"
+    },
+    {
+      "relative_path": "sageattention/triton/attn_qk_int8_per_block_causal.py",
+      "sha256": "3ade134aca600b863ae00cd59773d1e3d7823f055523aa71bb69acf6c35c3ded",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/triton/attn_qk_int8_per_block_causal.py",
+      "v1_sha256": "3ade134aca600b863ae00cd59773d1e3d7823f055523aa71bb69acf6c35c3ded"
+    },
+    {
+      "relative_path": "sageattention/triton/attn_qk_int8_per_block_causal_varlen.py",
+      "sha256": "a458da1f01e55a401897269d97da679c1e96b85e56b7fac15aeb8e5ad2b2bb6e",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/triton/attn_qk_int8_per_block_causal_varlen.py",
+      "v1_sha256": "a458da1f01e55a401897269d97da679c1e96b85e56b7fac15aeb8e5ad2b2bb6e"
+    },
+    {
+      "relative_path": "sageattention/triton/quant_per_block.py",
+      "sha256": "990b4881fb5e8d70b59fa7b796dab20693c82761175ee51fc4c5329d51e1d377",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/triton/quant_per_block.py",
+      "v1_sha256": "990b4881fb5e8d70b59fa7b796dab20693c82761175ee51fc4c5329d51e1d377"
+    },
+    {
+      "relative_path": "sageattention/triton/quant_per_block_varlen.py",
+      "sha256": "8b4934304dcd59b202a67c8b668487f69caa9567c3e0a6dcb539fd0c24424e4f",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/triton/quant_per_block_varlen.py",
+      "v1_sha256": "8b4934304dcd59b202a67c8b668487f69caa9567c3e0a6dcb539fd0c24424e4f"
+    },
+    {
+      "relative_path": "sageattention/triton/quant_per_thread.py",
+      "sha256": "e8aa4dfc16780326b90a9235439a0cb77875ff75d7c5376a1aac6adc82f4d643",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/sageattention/triton/quant_per_thread.py",
+      "v1_sha256": "e8aa4dfc16780326b90a9235439a0cb77875ff75d7c5376a1aac6adc82f4d643"
+    },
+    {
+      "relative_path": "sageattention/LICENSE",
+      "sha256": "178f46f58127373d449565589a32c2b5b60c082934618c17b7ce6890c61ef394",
+      "before_sha256": null,
+      "mode": "0o664",
+      "source": "/home/arezy/.cache/miniacc/stage3-followup-20260916/parent/sage-build/source/LICENSE",
+      "v1_sha256": "178f46f58127373d449565589a32c2b5b60c082934618c17b7ce6890c61ef394"
+    }
+  ],
+  "cpu_tests": 9,
+  "cpu_log_sha256": "427e0a8185d9563c5156fa0b09adb0b98a16fe6a0fd6de754ae527269a6b394c",
+  "operator_receipts": {
+    "sage": {
+      "path": "/mnt/Projects/MiniAcc/stage3/followup-20260916/sage-sm89-v2/result.json",
+      "sha256": "ce71b647b16873661634eb4fb1804873bc5bafbf2e01af13fca2b7683e021ee5"
+    },
+    "query": {
+      "path": "/mnt/Projects/MiniAcc/stage3/followup-20260916/query-sm89-v2/result.json",
+      "sha256": "8dc434e0c39b0c5859bb0ff6ea369c4a698150e11b43007959172cc32ae1beb8"
+    }
+  },
+  "timing_policy": "finite/evidence/counters/optional timers off in timed request; native standard four-forward perf retained; source/environment policy linked to excluded admission",
+  "capture_policy": "legacy sol_capture entrypoint disabled; retained v1 capture timing always inadmissible",
+  "stage4_note": "Stage 4 deployment: identical to deployment-v2 except minimax_h3.py carries the owner-authorized MINIACC_STAGE4_ADALN_KITCHEN guard relaxation (original backed up at stage4/runtime-backup/; receipts stage4/adaln-current-source.json, stage4/kitchen-current-sources/). stage3_followup.py carries the bounded stacking relaxation (subset of {sage,quantization,adaln} under the stage4 flag; original in stage4/runtime-backup/). denoising.py carries the Sol stacking relaxation (quantization+AdaLN cache under the stage4 flag; original in stage4/runtime-backup/)."
+}

@@ -1,0 +1,19 @@
+--- a/sglang/multimodal_gen/runtime/models/dits/minimax_h3.py
++++ b/sglang/multimodal_gen/runtime/models/dits/minimax_h3.py
+@@ -2136,8 +2136,14 @@
+         if (
+             adaln_cache_path is not None or adaln_weight_files is not None
+         ) and quant_config is not None:
+-            raise ValueError(
+-                "MiniMax H3 AdaLN cache is only compatible with unquantized weights"
++            if os.environ.get("MINIACC_STAGE4_ADALN_KITCHEN") != "1":
++                raise ValueError(
++                    "MiniMax H3 AdaLN cache is only compatible with unquantized weights"
++                )
++            logger.info(
++                "stage4_composition_marker adaln_sidecar_with_quantization=%s "
++                "(owner-authorized Stage 4 pipeline: BF16-derived sidecar values, INT8 compute)",
++                type(quant_config).__name__,
+             )
+         if arch.adaln_curve_grid is not None and (
+             adaln_cache_path is not None or adaln_weight_files is not None

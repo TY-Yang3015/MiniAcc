@@ -1,0 +1,11 @@
+{
+  "note": "Stage 4 rebind of the AdaLN sidecar source gate to the current composition-v2 runtime. AdaLN projection code verified unchanged vs the redo-era pin (164/164 adaln lines identical in minimax_h3.py; additions are four follow-up conflict-metadata lines in merge-ratio functions, not the projection path; denoise_loop.py adaln lines 6/6 identical). Sidecar/verification receipts unchanged and still enforced. Updated for the Stage 4 guard-relaxation patch; patched file hash bound.",
+  "parent": "stage3/adaln-sidecar-light4-20260915 ready.json provenance",
+  "verified_utc": "2026-09-17T10:10Z",
+  "native_source_sha256": {
+    "models/dits/minimax_h3.py": "e84e3c7a4ccc3ce410a254870d1f9b57395bbfe82124c5099ea64346b2a5904b",
+    "pipelines_core/stages/model_specific_stages/minimax_h3/denoise_loop.py": "0bc12aaee08dd39c71c9cc6ea081b02fecce21787e74509e858912f9037bf2e8",
+    "pipelines_core/stages/model_specific_stages/minimax_h3/time_request.py": "c63ae32bfc7e3fde5cdc7a791ceb5a62d9e72f30c9d08b6af773571c126bce90",
+    "layers/linear.py": "201c86fe0b8697480cfedf807df6ab0bb1ec5eb013c4e734367c9796bfe09599"
+  }
+}

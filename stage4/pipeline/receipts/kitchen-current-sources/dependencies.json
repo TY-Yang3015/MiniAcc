@@ -1,0 +1,31 @@
+{
+  "note": "Stage 4 rebind: same file inventory as redo quantization-parent-gate; hashes bound to the current composition-v2 runtime. Kitchen-relevant code verified unchanged (minimax_h3.py contains no kitchen-specific lines in either revision; behavior lives in lifecycle/loader/quantization files, all byte-identical to the redo pins unless listed as changed). Updated for the Stage 4 guard-relaxation patch (MINIACC_STAGE4_ADALN_KITCHEN gated); patched file hash bound.",
+  "parent": "stage3/redo-20260915/quantization-parent-gate",
+  "verified_utc": "2026-09-17T10:05Z",
+  "files": [
+    {
+      "path": "sglang/multimodal_gen/runtime/layers/quantization/kitchen_int8.py",
+      "sha256": "b18da9af57334df905b695441dda6a6740eeb4c5c30f4c1a39036744f52dee1a"
+    },
+    {
+      "path": "sglang/multimodal_gen/runtime/layers/linear.py",
+      "sha256": "201c86fe0b8697480cfedf807df6ab0bb1ec5eb013c4e734367c9796bfe09599"
+    },
+    {
+      "path": "sglang/multimodal_gen/runtime/layers/lora/linear.py",
+      "sha256": "de6f50a670b8532ae4989e01850d3ded532f65f2c460ae5fb80aaa568824dc6b"
+    },
+    {
+      "path": "sglang/multimodal_gen/runtime/pipelines_core/lora/pipeline.py",
+      "sha256": "e56322eb0e04186851653b898eb35e4f8397e752f49e97617347e4593ae8dbdf"
+    },
+    {
+      "path": "sglang/multimodal_gen/runtime/pipelines_core/lora/lora_merge_cache.py",
+      "sha256": "194c717dc74480b4c93e29dc57b964bba7c2c47bd962debd279f43c87c33906a"
+    },
+    {
+      "path": "sglang/multimodal_gen/runtime/models/dits/minimax_h3.py",
+      "sha256": "e84e3c7a4ccc3ce410a254870d1f9b57395bbfe82124c5099ea64346b2a5904b"
+    }
+  ]
+}

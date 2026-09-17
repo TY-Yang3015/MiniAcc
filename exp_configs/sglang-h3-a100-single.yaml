@@ -1,0 +1,52 @@
+{
+  "name": "sglang-h3-a100-single",
+  "family": "sglang-h3",
+  "hardware": "wolf8 A100 80GB PCIe SM80",
+  "gpu_count": 1,
+  "batch_size": 1,
+  "serial_uncontended": true,
+  "allocator_gib": 71.0,
+  "vram_headroom_gib": 8.0,
+  "host_headroom_gib": 16.0,
+  "attention_backend": "fa",
+  "compile": false,
+  "model_variant": "fl2va",
+  "task": "t2va",
+  "geometry": {"width": 1344, "height": 768, "frames": 124, "fps": 24, "audio_rate_hz": 32000, "audio_channels": 2},
+  "flow_shift": 12.0,
+  "audio_flow_shift": 3.0,
+  "configs": {
+    "lightx2v-4": {
+      "adapter_repo": "lightx2v/Minimax-h3-Turbo",
+      "adapter_file": "minimax_h3_fl2v_turbo_4step_v0.1.safetensors",
+      "adapter_alpha": 8,
+      "num_inference_steps": 5,
+      "expected_denoiser_forwards": 4
+    },
+    "larry-v4-8": {
+      "adapter_repo": "larryvrh/MiniMax-H3-Turbo-Lora",
+      "adapter_file": "minimax_h3_turbo_v4_step600_ema.safetensors",
+      "adapter_alpha": null,
+      "num_inference_steps": 9,
+      "expected_denoiser_forwards": 8
+    }
+  },
+  "runtime": {
+    "package": "sglang==0.5.19",
+    "python": ".local/sglang-venv/bin/python",
+    "layerwise_offload_components": ["dit", "text_encoder"],
+    "dit_offload_prefetch_size": 1,
+    "dit_layerwise_resident_layers": 0,
+    "vae_layerwise_offload": false,
+    "warmup": "one served-shape request before measured unique-input requests when persistent server completes setup",
+    "media_tools": "project ffmpeg/ffprobe on PATH inside launch and validation subprocesses"
+  },
+  "protocol": {
+    "manifest": "stage1/eval.yaml",
+    "seed": 20260909,
+    "tiers": [4, 8, 16],
+    "e2e": ["encoding", "denoising", "audio_decode", "video_decode", "mux", "output_materialization"],
+    "q0_timing": false,
+    "score_device": "local RTX4090 pinned scorer runtime"
+  }
+}

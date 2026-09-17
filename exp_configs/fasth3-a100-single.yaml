@@ -1,0 +1,68 @@
+{
+  "name": "fasth3-a100-single",
+  "family": "FastH3",
+  "hardware": "wolf8 A100 80GB PCIe SM80",
+  "gpu_count": 1,
+  "batch_size": 1,
+  "serial_uncontended": true,
+  "allocator_gib": 71.0,
+  "vram_headroom_gib": 8.0,
+  "host_headroom_gib": 16.0,
+  "offload": {
+    "dit": false,
+    "dit_layerwise": true,
+    "text_encoder": true,
+    "vae": true,
+    "pin_cpu_memory": false,
+    "residency": "zero resident DiT layers between layer forwards; native FastVideo layerwise manager",
+    "reason": "retry2 full-DiT residency left only 126 MiB sampled GPU free; native layerwise offload is required to preserve the 8 GiB admission reserve"
+  },
+  "task": "t2av",
+  "geometry": {"width": 1344, "height": 768, "frames": 124, "fps": 24, "audio_rate_hz": 32000, "audio_channels": 2},
+  "flow_shift": 12.0,
+  "audio_flow_shift": 3.0,
+  "compile": false,
+  "profiles": {
+    "dense": {
+      "model_id": "FastVideo/FastVideo-FastH3-4-step-Preview-v1-Dense-DataFree",
+      "checkpoint_step": 1000,
+      "checkpoint_content_sha256": "3f56129acb9749f2ae4e52bab176c09406bf027d68c6f020cf5ff99e651b1609",
+      "checkpoint_metadata_sha256": "a1ae1a4ec117b5bc79f61da4ee5d4003694f27dc6dfe55e9166b59d2b387e6b9",
+      "fastvideo_revision": "aa6e6c1c1e15f879011a47996c7d6bc8381eaf89",
+      "attention_backend": "FLASH_ATTN",
+      "num_inference_steps": 5,
+      "expected_denoiser_forwards": 4,
+      "fusions": false,
+      "inference_torch_compile": false,
+      "num_gpus": 1,
+      "use_fsdp_inference": false
+    },
+    "vsa": {
+      "model_id": "FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree",
+      "checkpoint_step": 1300,
+      "checkpoint_content_sha256": "b36987515e4c75fa4c7aaa632a7842c829ea141b235358a54d782b51230497b3",
+      "checkpoint_metadata_sha256": "dcad0fbee2a7c7e75e53435f4fd98fccf3138844883874edf057962ab48fa428",
+      "fastvideo_revision": "48a047c05ff4138f20cfa33351499c6ec5945f5d",
+      "attention_backend": "VIDEO_SPARSE_ATTN_H3",
+      "vsa_tile_size": 64,
+      "vsa_sparsity": 0.9,
+      "vsa_kernel": "triton",
+      "num_inference_steps": 5,
+      "expected_denoiser_forwards": 4,
+      "fusions": false,
+      "inference_torch_compile": false,
+      "num_gpus": 1,
+      "use_fsdp_inference": false
+    }
+  },
+  "protocol": {
+    "manifest": "stage1/eval.yaml",
+    "seed": 20260909,
+    "tiers": [4, 8, 16],
+    "timing": ["process-cold load/startup/compile separated", "persistent-runtime warm unique-input E2E when supported", "encoding", "denoise", "audio_decode", "video_decode", "mux", "materialization"],
+    "media_validation": "project ffprobe PATH prechecked inside subprocess plus full ffmpeg decode",
+    "scorer": "same local RTX4090 pinned VBench runtime/device as q0-final16",
+    "q0_timing": false,
+    "vsa_policy": "trained VSA checkpoint, tile64 Triton only; do not use dense relabel or sm100a on SM80"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "vbench-eval-cpu",
+  "purpose": "official-vbench-stage1-preparation",
+  "device": "cpu",
+  "gpu_count": 0,
+  "run_scorers": false,
+  "vbench_revision": "fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490",
+  "source_root": "~/.cache/miniacc/vbench-reference-20260911/VBench-fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490",
+  "tiers": [4, 8, 16],
+  "metrics": ["subject_consistency", "background_consistency", "motion_smoothness", "dynamic_degree", "aesthetic_quality", "imaging_quality", "overall_consistency"]
+}

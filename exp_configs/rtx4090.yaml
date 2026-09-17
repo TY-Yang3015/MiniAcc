@@ -1,0 +1,13 @@
+{
+  "name": "rtx4090",
+  "gpu_count": 1,
+  "per_gpu_memory_gib": 24.0,
+  "allocator_gib": 16.0,
+  "vram_headroom_gib": 2.0,
+  "vram_mode": "novram",
+  "parallel_backend": "none",
+  "world_size": 1,
+  "runtime_profile": "default",
+  "host_headroom_gib": 8.0,
+  "conditioning_mode": "concurrent"
+}

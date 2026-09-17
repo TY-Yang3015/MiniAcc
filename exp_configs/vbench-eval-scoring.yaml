@@ -1,0 +1,13 @@
+{
+  "name": "vbench-eval-scoring",
+  "purpose": "official-vbench-stage1-scoring",
+  "device": "cuda",
+  "gpu_count": 1,
+  "run_scorers": true,
+  "vbench_revision": "fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490",
+  "source_root": "~/.cache/miniacc/vbench-reference-20260911/VBench-fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490",
+  "scorer_python": "~/.cache/miniacc/vbench-reference-20260911/env/bin/python",
+  "read_frame": false,
+  "tiers": [4, 8, 16],
+  "metrics": ["subject_consistency", "background_consistency", "motion_smoothness", "dynamic_degree", "aesthetic_quality", "imaging_quality", "overall_consistency"]
+}
