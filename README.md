@@ -6,6 +6,7 @@
 [![Adapter](https://img.shields.io/badge/LightX2V4-4--step-orange)]()
 [![Hardware](https://img.shields.io/badge/RTX%204090%20%7C%20A100%2080GB-tested-76B900)]()
 
+**See the research blog at https://ty-yang3015.github.io/blog/2026/09/17/miniacc/ !**
 
 **Investigating how to optimise large audio–video diffusion models at inference time on a single GPU with MiniMax-H3.**
 In our current single-GPU measurements, the integrated pipeline finishes
