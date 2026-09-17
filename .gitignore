@@ -261,3 +261,6 @@ scripts/wolf8_*.sh
 docs/benchmarks-history.md
 docs/decisions-history.md
 !pipeline/demo/*.mp4
+
+# Tests are kept local
+tests/
