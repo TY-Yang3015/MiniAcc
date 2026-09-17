@@ -135,12 +135,12 @@ def _adaln_sidecar_evidence(site: Path, adapter: dict[str, Any]) -> dict[str, An
 
 
 def _prompt_records(purpose: str) -> list[dict[str, Any]]:
-    data = json.loads((ROOT / "stage1/eval.yaml").read_text(encoding="utf-8"))
+    data = json.loads((ROOT / "pipeline/eval.yaml").read_text(encoding="utf-8"))
     prompts = data.get("prompts", [])
     frozen = ["vbench-0195", "vbench-0302", "vbench-0846", "vbench-0749"]
     by_id = {row["id"]: row for row in prompts}
     if any(key not in by_id for key in frozen):
-        raise RuntimeError("frozen prompt key missing from stage1/eval.yaml")
+        raise RuntimeError("frozen prompt key missing from pipeline/eval.yaml")
     keys = [frozen[0]] if purpose in {"speed", "boundary-a"} else frozen
     records = [
         {

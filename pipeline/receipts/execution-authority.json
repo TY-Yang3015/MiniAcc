@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-09-16T08:59:06.816624+00:00",
+  "owner_instruction": "execute this please. The deadline is 5pm this afternoon.",
+  "timezone": "Europe/London",
+  "deadline_local": "2026-09-16T17:00:00+01:00",
+  "deadline_utc": "2026-09-16T16:00:00Z",
+  "status": "executing",
+  "scope": "owner-amendment.json and README.md follow-up; inherited safety/protocol constraints unchanged",
+  "milestones_utc": {
+    "worker_handoff": "2026-09-16T10:15:00Z",
+    "integration_target": "2026-09-16T11:30:00Z",
+    "feature_freeze": "2026-09-16T12:30:00Z",
+    "no_new_generation_after": "2026-09-16T14:00:00Z",
+    "report_candidate": "2026-09-16T15:15:00Z"
+  }
+}

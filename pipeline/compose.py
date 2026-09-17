@@ -14,10 +14,10 @@ def _stage4_kitchen_source_evidence(native,site):
     import json
     from pathlib import Path
     ROOT=Path('/mnt/Projects/MiniAcc')
-    path=ROOT/'stage4/kitchen-current-sources/current-sources.json'
+    path=Path(__file__).resolve().parent/'receipts/kitchen-current-sources/current-sources.json'
     entries=json.loads(path.read_text())
     dependencies=json.loads((path.with_name('dependencies.json')).read_text())['files']
-    package=json.loads((ROOT/'stage3/redo-20260915/kitchen-package-reuse.json').read_text())['files']
+    package=json.loads((Path(__file__).resolve().parent/'receipts/kitchen-package-reuse.json').read_text())['files']
     bound=entries+dependencies+package
     for entry in bound:
         rel=Path(entry['path'])
@@ -41,10 +41,10 @@ def _stage4_adaln_sidecar_evidence(native,site,adapter):
     expected='8f794c6049b8fdfbb85793be29fe79e15ce02a3d00bbd729c2137bdadcdc34d0'
     provenance=ready['provenance']
     checks=[ready.get('status')=='prepared_not_benchmarked',ready.get('native_storage_roundtrip') is True,ready.get('native_lookup_checks')==4,ready.get('sidecar')==str(sidecar),ready.get('sha256')==verification.get('sidecar_sha256')==native._sha256(sidecar)==expected,verification.get('status')=='native_projection_equivalence_passed',verification.get('exact_equal') is True,verification.get('projection_plan_comparisons')==204,verification.get('normalized_adapter_keys')==624,verification.get('cache_dependency_targets')==[],provenance['adapter']['sha256']==adapter['actual_sha256'],provenance['model_revision']==native.SNAPSHOT.name,provenance['plan_gemm_rows']==[1,2,2,2],provenance['tp_size']==1,provenance['matmul_allow_tf32'] is False,verification.get('matmul_allow_tf32') is False]
-    stage4=json.loads((ROOT/'stage4/adaln-current-source.json').read_text())['native_source_sha256']
+    stage4=json.loads((Path(__file__).resolve().parent/'receipts/adaln-current-source.json').read_text())['native_source_sha256']
     runtime=site/'sglang/multimodal_gen/runtime'
     checks.extend(native._sha256(runtime/name)==sha for name,sha in stage4.items())
-    plans=ROOT/'artifacts/review/stage3-adaln-plan-parent-20260915/native-plans.json'
+    plans=Path(__file__).resolve().parent/'receipts/native-plans.json'
     checks.append(native._sha256(plans)==provenance['plan_record_sha256'])
     assert all(checks) and not (root/'failure.json').exists(),'AdaLN stage4 gate failed'
     return {'path':str(sidecar),'sha256':expected,'ready':str(ready_path),'verification':str(verification_path),'projection_plan_comparisons':204,'scope':'local RTX4090 native projections; stage4 rebind to composition-v2 source; not full-model or cross-hardware equivalence'}
@@ -71,7 +71,7 @@ def compose_stage4_config(rf,native,arm,purpose):
     config['candidate_id']={'adaln_kitchen_sage':'sage_qk8_pv16'}.get(arm,arm)
     config['sampler']='euler'
     config['feature_delta']='stage4 hard-coded pipeline: AdaLN sidecar (post-adapter, 204-key bitwise-verified) + Kitchen INT8 weight-only (explicit CUDA, ConvRot256, no fallback)' + (' + SageAttention2.2.0 QK INT8/PV FP16' if arm=='adaln_kitchen_sage' else '')
-    manifest4=json.loads((Path('/mnt/Projects/MiniAcc/stage4/deployment-stage4.json')).read_text())
+    manifest4=json.loads((Path(__file__).resolve().parent/'deployment.json').read_text())
     site4=native._runtime_path()/'lib/python3.12/site-packages'
     rows4=[]
     for row in manifest4['installed']:
@@ -81,7 +81,7 @@ def compose_stage4_config(rf,native,arm,purpose):
         rows4.append({'path':str(path),'sha256':row['sha256']})
     config['feature_sources']=rows4
     config['followup_authority']=str(rf.AUTH/'execution-authority.json')
-    config['shared_decoder_residency']={'receipt':'stage3/redo-20260915/residency-parent-gate/deployment-receipt.json','precision':'unchanged native selective decoder placement; FP32 islands preserved'}
-    config['host_copy_reserve_accommodation']={'bytes':17179869184,'receipt':'artifacts/review/stage3-host-copy-reserve-20260915/installation.json'}
+    config['shared_decoder_residency']={'receipt':'pipeline/receipts/residency-deployment-receipt.json','precision':'unchanged native selective decoder placement; FP32 islands preserved'}
+    config['host_copy_reserve_accommodation']={'bytes':17179869184,'receipt':'pipeline/receipts/host-copy-reserve-installation.json'}
     rf.CURRENT=config  # follow-up effective-environment validator binds the built config
     return config

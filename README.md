@@ -74,18 +74,17 @@ audio–video request, RTX 4090):
 
 ```bash
 # 1. Apply the runtime patches to your SGLang 0.5.19 installation
-patch -p1 < pipeline/patches/0001-adaln-kitchen-guard-relaxation.patch
-patch -p1 < pipeline/patches/0002-stacking-relaxation-sage.patch
-patch -p1 < pipeline/patches/0003-sol-stacking-relaxation.patch
+for p in pipeline/patches/*.patch; do patch -p1 < "$p"; done
 
-# 2. Check the pinned source manifest against your runtime
-python -c "import json;print(len(json.load(open('pipeline/deployment.json'))['installed']),'files pinned')"
+# 2. Check prerequisites (runtime, model, adapter, sidecar)
+python pipeline/setup.py
 
-# 3. Run the pipeline (default includes SageAttention)
-python pipeline/run_stage4.py adaln_kitchen_sage speed   <output-dir>
-python pipeline/run_stage4.py adaln_kitchen_sage quality <output-dir>
-# Without Sage:
-python pipeline/run_stage4.py adaln_kitchen speed <output-dir>
+# 3. Run the pipeline (one timed request, default includes SageAttention)
+python pipeline/serve.py --output outputs/demo
+
+# Fidelity-first (no Sage) or a quality cohort:
+python pipeline/serve.py --no-sage --output outputs/demo-nosage
+python pipeline/serve.py --quality --output outputs/demo-quality
 ```
 
 ## Repository layout

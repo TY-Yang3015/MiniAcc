@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-09-15T17:28:41.624035+00:00",
+  "review": "4d53440e-fe4e-41be-b58d-41c9cff8a642",
+  "patch_sha256": "e1ee6b1ca363281f67256eadfec68948e4f1672af790afe451e6ab3929cc6d95",
+  "runtime_site": "/home/arezy/.cache/miniacc/stage3-sglang-runtime/sglang-0.5.19-cu130-cp312/lib/python3.12/site-packages",
+  "files": [
+    {
+      "path": "sglang/multimodal_gen/runtime/managers/memory_managers/component_manager.py",
+      "prior_sha256": "315d9bf84f2a32e877ed4ae9e67276d1d3741154ca2e1eb04f9249902091dd38",
+      "prior_absent": false,
+      "target_sha256": "2bb2faabc1b801547528f83b3d64362d985d9d54bd505df1d8e3b3bdd18e6774",
+      "mode": 511,
+      "installed": true
+    },
+    {
+      "path": "sglang/multimodal_gen/runtime/managers/memory_managers/component_residency_strategies.py",
+      "prior_sha256": "0c6561153c499e404632ae2981ea172c80af39034e412b7f74ee9e59b561fa75",
+      "prior_absent": false,
+      "target_sha256": "92ad9a5287a95a0c581132b866b55d42a173ecc1598042bec8c3045a60dd2296",
+      "mode": 511,
+      "installed": true
+    },
+    {
+      "path": "sglang/multimodal_gen/runtime/models/vaes/minimax_h3.py",
+      "prior_sha256": "72b08543587f41a359242ff49b2b34bba6f69dc5595524bd7b823c1b3eaabc09",
+      "prior_absent": false,
+      "target_sha256": "6c234d88255aa1c51a6a5ee7568adaa3822cdde99a6b65c40912badbe55adebf",
+      "mode": 511,
+      "installed": true
+    },
+    {
+      "path": "sglang/multimodal_gen/runtime/pipelines_core/stages/model_specific_stages/minimax_h3/stages/visual_encoding.py",
+      "prior_sha256": "b70af680ebd7c0b5efbf7a915bdb703233b50704f8b39fd68c7786ec983f35b4",
+      "prior_absent": false,
+      "target_sha256": "0e56b84dbcb49387a7e9d7035a606ac83156b42b4425b595feb76d2bbdd8b96a",
+      "mode": 436,
+      "installed": true
+    },
+    {
+      "path": "sglang/multimodal_gen/runtime/pipelines_core/stages/model_specific_stages/minimax_h3/stages/decoding.py",
+      "prior_sha256": "fdec4c9ab8ec02102befbd467e5065ec6e2149ed9070400caee5de02cf39417a",
+      "prior_absent": false,
+      "target_sha256": "10449a05b7b64ca7ca20b64d28abcf44ff54b83e7a9ac8eb73d962a22085d425",
+      "mode": 511,
+      "installed": true
+    },
+    {
+      "path": "sglang/multimodal_gen/runtime/managers/memory_managers/decoder_residency.py",
+      "prior_sha256": null,
+      "prior_absent": true,
+      "target_sha256": "63245a851e8135d69a79975c3d71ca85de7ff8b12ef32d1c2e0399b994aeb615",
+      "mode": 420,
+      "installed": true
+    }
+  ],
+  "status": "installed",
+  "finished_utc": "2026-09-15T17:28:41.700052+00:00"
+}

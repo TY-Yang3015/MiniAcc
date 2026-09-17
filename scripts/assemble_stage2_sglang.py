@@ -43,7 +43,7 @@ def main(argv=None):
     ap.add_argument("--output", type=Path, required=True)
     ap.add_argument("--ffprobe", type=Path, required=True)
     ap.add_argument("--ffmpeg", type=Path, required=True)
-    ap.add_argument("--manifest", type=Path, default=ROOT / "stage1/eval.yaml")
+    ap.add_argument("--manifest", type=Path, default=ROOT / "pipeline/eval.yaml")
     args = ap.parse_args(argv)
     manifest = json.loads(args.manifest.read_text())
     prompts = {p["id"]: p for p in manifest["prompts"]}

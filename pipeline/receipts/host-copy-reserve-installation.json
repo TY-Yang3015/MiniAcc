@@ -1,0 +1,13 @@
+{
+  "target": "/home/arezy/.cache/miniacc/stage3-sglang-runtime/sglang-0.5.19-cu130-cp312/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/memory_managers/host_memory_budget.py",
+  "original_sha256": "574d7c4ab84fd89a4c6b557af28ee50ef732652337df2202e3904de4718d3002",
+  "proposed_sha256": "0349a3ae5cf09a673c6d598eb0e729685459fa09409f1d506dffe6b2baaa98ad",
+  "status": "installed",
+  "reason": "Native host-copy planner reserves4GiB, below the already-required16GiB floor. Reduced sidecar layers fit that unsafe budget and were copied into anonymous RAM. Raise planner reserve to the existing floor; never fake telemetry or use TEST_FORCE_HOST_AVAILABLE_GIB.",
+  "scope": "shared correctness/placement accommodation, not extra optimization or baseline retry",
+  "installed_at_utc": "2026-09-15T13:15:34.239281+00:00",
+  "mode_before_after": "0777",
+  "review_run": "326a6f86-117a-46c0-8166-a5b956326a61",
+  "original_backup": "artifacts/review/stage3-host-copy-reserve-20260915/original.py",
+  "does_not_prove_generation_fit": true
+}

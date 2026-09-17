@@ -16,7 +16,7 @@ spec=importlib.util.spec_from_file_location('followup_adapter',AUTH/'run_followu
 rf=importlib.util.module_from_spec(spec);sys.modules['followup_adapter']=rf;spec.loader.exec_module(rf)
 native=rf.native
 
-COMPOSE=Path('/home/arezy/.cache/miniacc/stage4-20260917/composition/compose_stage4.py')
+COMPOSE=Path(__file__).with_name('compose.py')
 
 def load_composer():
     assert COMPOSE.is_file(),'composition lane output not reviewed/deployed yet'
@@ -29,7 +29,7 @@ def records16(native_mod,slice_spec):
     lo,hi=(int(x) for x in slice_spec.split(':'))
     def _records(purpose):
         if purpose!='quality':return original(purpose)
-        data=json.loads((ROOT/'stage1/eval.yaml').read_text())
+        data=json.loads((Path(__file__).with_name('eval.yaml')).read_text())
         assert len(data['prompts'])==16
         return [{'prompt_id':p['id'],'prompt_en':p['prompt_en'],'stratum':p.get('stratum'),'purpose':purpose} for p in data['prompts'][lo:hi]]
     return _records

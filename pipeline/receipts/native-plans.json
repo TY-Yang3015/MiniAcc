@@ -1,0 +1,88 @@
+{
+  "recorded_at_utc": "2026-09-15T12:14:05.896365+00:00",
+  "scope": "CPU scalar-plan preparation only, not inference, sidecar generation or equivalence proof",
+  "task": "t2va",
+  "scheduler_points": 5,
+  "native_forwards": 4,
+  "flow_shift": 12.0,
+  "audio_flow_shift": 3.0,
+  "video_sigmas": [
+    1.0,
+    0.9729729890823364,
+    0.9230769276618958,
+    0.800000011920929,
+    0.0
+  ],
+  "audio_sigmas": [
+    1.0,
+    0.8999999761581421,
+    0.75,
+    0.5,
+    0.0
+  ],
+  "plans": [
+    {
+      "fp32_timesteps": [
+        0.0
+      ],
+      "fp32_bits": [
+        0
+      ],
+      "gemm_rows": 1
+    },
+    {
+      "fp32_timesteps": [
+        0.027027010917663574,
+        0.10000002384185791
+      ],
+      "fp32_bits": [
+        1021142976,
+        1036831952
+      ],
+      "gemm_rows": 2
+    },
+    {
+      "fp32_timesteps": [
+        0.07692307233810425,
+        0.25
+      ],
+      "fp32_bits": [
+        1033734616,
+        1048576000
+      ],
+      "gemm_rows": 2
+    },
+    {
+      "fp32_timesteps": [
+        0.19999998807907104,
+        0.5
+      ],
+      "fp32_bits": [
+        1045220556,
+        1056964608
+      ],
+      "gemm_rows": 2
+    }
+  ],
+  "two_row_layout_fixtures_agree": true,
+  "sidecar_storage_shape": {
+    "block_params": [
+      4,
+      2,
+      50,
+      96768
+    ],
+    "final_params": [
+      4,
+      2,
+      10752
+    ]
+  },
+  "bf16_parameter_storage_bytes": 77586432,
+  "source_sha256": {
+    "pipelines_core/stages/model_specific_stages/minimax_h3/time_request.py": "c63ae32bfc7e3fde5cdc7a791ceb5a62d9e72f30c9d08b6af773571c126bce90",
+    "pipelines_core/stages/model_specific_stages/minimax_h3/denoise_loop.py": "b652a2db6d95a935aa9dea40d747aaf9ac71d83ff53a774ae8adc0274da06991",
+    "models/dits/minimax_h3.py": "2b119efbf821360baaeb5656d3ea94268fd74b1975a1f6f68681183c951ca57a"
+  },
+  "cuda_initialized": false
+}

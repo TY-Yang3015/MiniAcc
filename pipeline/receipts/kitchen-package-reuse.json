@@ -1,0 +1,293 @@
+{
+  "source": "/home/arezy/.cache/miniacc/89a54668-runtime/lib/python3.12/site-packages",
+  "destination": "/home/arezy/.cache/miniacc/stage3-sglang-runtime/sglang-0.5.19-cu130-cp312/lib/python3.12/site-packages",
+  "version": "0.2.33",
+  "scope": "existing inspected package only; no dependency/environment mixing",
+  "files": [
+    {
+      "path": "comfy_kitchen/flash_attention.py",
+      "sha256": "f026ce60948339474c5722f8fc38fcd24544ae4fe7bfc8edb797b39df0e73af4",
+      "bytes": 4171
+    },
+    {
+      "path": "comfy_kitchen/constraints.py",
+      "sha256": "57bf9a5f2b347a2c82a589822be0af0aba6d2c1f566986d83790af774e7d6385",
+      "bytes": 12953
+    },
+    {
+      "path": "comfy_kitchen/exceptions.py",
+      "sha256": "5b5d59b4d11e07381395d7c8dddf6fd61d72c2710e891a55754e2d00b933bcd8",
+      "bytes": 1302
+    },
+    {
+      "path": "comfy_kitchen/_rope_utils.py",
+      "sha256": "39724e0cedd6e0e504af9b5625221a6ba1144ec6e5f117b0ebe6f65cbc9e3d25",
+      "bytes": 4108
+    },
+    {
+      "path": "comfy_kitchen/registry.py",
+      "sha256": "181b02ee1ee60154766cebb3cad6dc5d2015c38551e10071303a5a2a897f7015",
+      "bytes": 11030
+    },
+    {
+      "path": "comfy_kitchen/sage_attention.py",
+      "sha256": "a23058daecae103dfe0a0e50478edb7fd179db6d6be645c234c8c25e7163ca0c",
+      "bytes": 19990
+    },
+    {
+      "path": "comfy_kitchen/__init__.py",
+      "sha256": "e19ad20021eb35986c9cfce19c4ee2fdc813f2783aeeae46559d62b649744117",
+      "bytes": 34292
+    },
+    {
+      "path": "comfy_kitchen/scaled_mm_v2.py",
+      "sha256": "05d79ac082a51fb6624f94f878dfa8a1499f678b9b81274e54ce812cecde1262",
+      "bytes": 6945
+    },
+    {
+      "path": "comfy_kitchen/float_utils.py",
+      "sha256": "de03e340ded7d21f136d0f8c662b976588c2464194dba1c13168f091a02fc216",
+      "bytes": 12930
+    },
+    {
+      "path": "comfy_kitchen/tensor/w4a8_int8.py",
+      "sha256": "7c3673db46a3665eb6c72a6a469b7adf55cdaaaba026b95b55ac6ef05ca17b36",
+      "bytes": 12865
+    },
+    {
+      "path": "comfy_kitchen/tensor/base.py",
+      "sha256": "1779b95ec16d2f3db1adcdbf448b931104ad6f609849afec7d03c999cfc819eb",
+      "bytes": 18126
+    },
+    {
+      "path": "comfy_kitchen/tensor/awq_w4a16.py",
+      "sha256": "f4d50382262bfcbe2b5ea2a6ad3061050eb51a98e2ffd13b049c0dd48c644079",
+      "bytes": 7745
+    },
+    {
+      "path": "comfy_kitchen/tensor/nvfp4.py",
+      "sha256": "ffbd27ab47a30406bfbaf7febcbea4b57f661289490d4e218c60f82be7546e82",
+      "bytes": 9675
+    },
+    {
+      "path": "comfy_kitchen/tensor/__init__.py",
+      "sha256": "90de7c358e80554690da9010f637a630bc3769d2126e1d398b56b9baf0fa1fe0",
+      "bytes": 2364
+    },
+    {
+      "path": "comfy_kitchen/tensor/int8.py",
+      "sha256": "df5fea37f408a224060c7d89d5a074e4c59eda4937020fcc5693c465934cb3a0",
+      "bytes": 13751
+    },
+    {
+      "path": "comfy_kitchen/tensor/svdquant_w4a4.py",
+      "sha256": "64dc20f8237475912415dcfcbe10c7ec62776c51696c347d02fb025c91cc3767",
+      "bytes": 22340
+    },
+    {
+      "path": "comfy_kitchen/tensor/fp8.py",
+      "sha256": "9ee88f3f7ae3aa7c54e96a767719dc3a10aba61cf83a56e572bf4eb6f415e410",
+      "bytes": 7612
+    },
+    {
+      "path": "comfy_kitchen/tensor/mxfp8.py",
+      "sha256": "fbfa46c04bdcbdfc6c70e813b3c7a7188e0921097dc096035b04389c4d661fbe",
+      "bytes": 8475
+    },
+    {
+      "path": "comfy_kitchen/tensor/convrot_w4a4.py",
+      "sha256": "ac53dac72a441123bc792b5968a5aabd68dd19e5953b447b828a4eb03f0a61cf",
+      "bytes": 8809
+    },
+    {
+      "path": "comfy_kitchen/tensor/int8_utils.py",
+      "sha256": "4776532e7394c56262cc02c48217a20b520d123c2bf9539eaf77cf0ff32ff1b8",
+      "bytes": 2151
+    },
+    {
+      "path": "comfy_kitchen/backends/_modulation.py",
+      "sha256": "0a8bfcab3eeaeec19dd5fe89acebe746b5fe201e7b6f5f326c7e2eea318f0919",
+      "bytes": 2582
+    },
+    {
+      "path": "comfy_kitchen/backends/_activations.py",
+      "sha256": "3cf0bbc1fbc556e671fad8b69fc65c03de86ab1716b170497ab9a63980b7f50b",
+      "bytes": 2104
+    },
+    {
+      "path": "comfy_kitchen/backends/eager/w4a8_int8.py",
+      "sha256": "7bf35449e4f3b86d22b57ad93f4675d862842bd355fa3a74529398b46d4c9685",
+      "bytes": 21333
+    },
+    {
+      "path": "comfy_kitchen/backends/eager/sol_attn.py",
+      "sha256": "58df0f6a498c92a2ce385b006399882a5898546bdc434f949a4880f9e50aab6e",
+      "bytes": 12368
+    },
+    {
+      "path": "comfy_kitchen/backends/eager/awq.py",
+      "sha256": "6a7cfb02835d5fca1c627a63dbdb16c535dff2cdff7fcaa0146b3166761e7d6c",
+      "bytes": 3849
+    },
+    {
+      "path": "comfy_kitchen/backends/eager/__init__.py",
+      "sha256": "8a92e2b0b1b80781fe401fecba658bb7f79962c73ba2a463d4a44488feda375d",
+      "bytes": 24861
+    },
+    {
+      "path": "comfy_kitchen/backends/eager/adaln.py",
+      "sha256": "0de0af829d63679300911c8765d12a4ddc05be3755f5dd1f6fb8566bd9c3a160",
+      "bytes": 1905
+    },
+    {
+      "path": "comfy_kitchen/backends/eager/na.py",
+      "sha256": "4f1d82fe02af995d395969667f6cfd8d10635c3144eec8ca78fe37c103803995",
+      "bytes": 7424
+    },
+    {
+      "path": "comfy_kitchen/backends/eager/svdquant.py",
+      "sha256": "0cb15581ac4349be309ab39cdd11cb9a4d57e6d977d295fe8462949d90d74267",
+      "bytes": 15458
+    },
+    {
+      "path": "comfy_kitchen/backends/eager/rope.py",
+      "sha256": "aee33a18bb5fe75ce24ebad389b830c9d5775d52723fc7df4864598547b2257c",
+      "bytes": 14622
+    },
+    {
+      "path": "comfy_kitchen/backends/eager/quantization.py",
+      "sha256": "71ad880e9aadf4e9e8f144a3a1ba7a5e2c836df727fc90e059a4431bab94ceb8",
+      "bytes": 44121
+    },
+    {
+      "path": "comfy_kitchen/backends/eager/convrot_w4a4.py",
+      "sha256": "8dbf00fdbab7642804258aaa50f1319cd54d99a7a03ac00049b2f222990cdd30",
+      "bytes": 7582
+    },
+    {
+      "path": "comfy_kitchen/backends/triton/w4a8_int8.py",
+      "sha256": "cdc3138f8be312e8130ee203720472e08cb1550b5f4d9aa47b03cfe5dd47a37e",
+      "bytes": 5192
+    },
+    {
+      "path": "comfy_kitchen/backends/triton/__init__.py",
+      "sha256": "9dd763c1688725d8d7cb4461e1e97687e4ca9e60ab19c6d369e47b175b59b8fa",
+      "bytes": 13718
+    },
+    {
+      "path": "comfy_kitchen/backends/triton/adaln.py",
+      "sha256": "889c37c6e98f0be5a316deb8e787096d3243ab12af790c743065ee0689885951",
+      "bytes": 4016
+    },
+    {
+      "path": "comfy_kitchen/backends/triton/na.py",
+      "sha256": "3cddc77d969e781cee51b06420dc09db68c560cfc57b9f0f0663cb5cf314a6be",
+      "bytes": 6137
+    },
+    {
+      "path": "comfy_kitchen/backends/triton/rope.py",
+      "sha256": "4a5b3fc6faded7691aa97f743c1ee56b1f5ffb82246804c3048c280d9b44a1b5",
+      "bytes": 10221
+    },
+    {
+      "path": "comfy_kitchen/backends/triton/quantization.py",
+      "sha256": "caa360f0ada87c639d45b7d31017444ca71f60905a198c60520ec809c0beaeae",
+      "bytes": 37402
+    },
+    {
+      "path": "comfy_kitchen/backends/triton/rms_rope.py",
+      "sha256": "68a5760334a9cfd72717374f2107d5260d3b86683b9b6205bbc2f00c1ad08e6e",
+      "bytes": 8314
+    },
+    {
+      "path": "comfy_kitchen/backends/hip/_C.abi3.so",
+      "sha256": "a54eb1e0569d174f03f48d23eac5c768fb90fb411f128f302f879b20ef4d1de6",
+      "bytes": 83891896
+    },
+    {
+      "path": "comfy_kitchen/backends/hip/__init__.py",
+      "sha256": "6c7c9baf8c05358b6684283568cc6af0f9b04005c34776cc57b8da88574f46e6",
+      "bytes": 106545
+    },
+    {
+      "path": "comfy_kitchen/backends/hip/architectures.json",
+      "sha256": "27e84eb8e81c5aef33af28768ac57fabed6259a8f4e0326669d0bec82246e5f2",
+      "bytes": 330
+    },
+    {
+      "path": "comfy_kitchen/backends/cuda/_C.abi3.so",
+      "sha256": "30ce617b3fced8ca4fad2723c5fbd721721c81b0794a9be4560fa6968ca33037",
+      "bytes": 180574016
+    },
+    {
+      "path": "comfy_kitchen/backends/cuda/input_act_codes.h",
+      "sha256": "c589edafa0e8c9696c8026b470db71595bd149bd1cc193c293fd6d3f804a9609",
+      "bytes": 587
+    },
+    {
+      "path": "comfy_kitchen/backends/cuda/utils.cuh",
+      "sha256": "a3482d9911029f017c64b39dae5198f76a4c9585b8ede5c734643bcc18d04a4d",
+      "bytes": 3636
+    },
+    {
+      "path": "comfy_kitchen/backends/cuda/__init__.py",
+      "sha256": "4f09f943122d4a0387149151676cb3335ced980bb342d88d84f9161419e28859",
+      "bytes": 158554
+    },
+    {
+      "path": "comfy_kitchen/backends/cuda/float_utils.cuh",
+      "sha256": "6d38112d07cfcfe7d1be9d9a5c5a006e379fcfdcdc78bf4729259ef581adc707",
+      "bytes": 5944
+    },
+    {
+      "path": "comfy_kitchen/backends/cuda/cublaslt_runtime.h",
+      "sha256": "5fed57c8609c4064c374299810dcb1285e835de9433c6e868004ba1b6e5e4486",
+      "bytes": 7928
+    },
+    {
+      "path": "comfy_kitchen/backends/cuda/dtype_dispatch.cuh",
+      "sha256": "5a155c3bf2123604a0689ad792016b703c45d9676a389381b482ac1f1afb23bc",
+      "bytes": 12964
+    },
+    {
+      "path": "comfy_kitchen-0.2.33.dist-info/WHEEL",
+      "sha256": "a357f1e231ac0f9c64170d07e3efbe3f629b5fb82a1a3f8944cbc1bf84d6b0fe",
+      "bytes": 150
+    },
+    {
+      "path": "comfy_kitchen-0.2.33.dist-info/RECORD",
+      "sha256": "c1c9e8db2f33020de10d824c093090c0374d09084c1df82fc221bfe5a3b983e7",
+      "bytes": 7972
+    },
+    {
+      "path": "comfy_kitchen-0.2.33.dist-info/REQUESTED",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "comfy_kitchen-0.2.33.dist-info/top_level.txt",
+      "sha256": "96ad697df0eb277a0765b505104cbe4852e4963e48cf061f0bcb0301c012a6da",
+      "bytes": 14
+    },
+    {
+      "path": "comfy_kitchen-0.2.33.dist-info/INSTALLER",
+      "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+      "bytes": 4
+    },
+    {
+      "path": "comfy_kitchen-0.2.33.dist-info/METADATA",
+      "sha256": "68dfcadab60761ea2fb0bee7ca67a6cf8122b283a62a7126e001bac63c95b282",
+      "bytes": 15495
+    },
+    {
+      "path": "comfy_kitchen-0.2.33.dist-info/licenses/NOTICE",
+      "sha256": "35c43127ad3acbd6bc94ff63c56684a7c26eedf07795e596c8105a0476dae2ea",
+      "bytes": 4991
+    },
+    {
+      "path": "comfy_kitchen-0.2.33.dist-info/licenses/LICENSE",
+      "sha256": "cd1c9ea1573c9047e9b5a3676ecc1c8f755e56f249ac1ebd8b5ceda7899037da",
+      "bytes": 11364
+    }
+  ]
+}
