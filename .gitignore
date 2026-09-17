@@ -239,9 +239,7 @@ stage1/*
 !stage1/eval.yaml
 stage2/
 stage3/
-stage4/*
-!stage4/pipeline/
-!stage4/pipeline/**
+stage4/
 *.mp4
 
 # Stage 1/2 experiment scripts (local only)
@@ -262,4 +260,4 @@ scripts/wolf8_*.sh
 # Result/history documents (local only)
 docs/benchmarks-history.md
 docs/decisions-history.md
-!stage4/pipeline/demo/*.mp4
+!pipeline/demo/*.mp4
