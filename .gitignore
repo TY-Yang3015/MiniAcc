@@ -262,3 +262,4 @@ scripts/wolf8_*.sh
 # Result/history documents (local only)
 docs/benchmarks-history.md
 docs/decisions-history.md
+!stage4/pipeline/demo/*.mp4
