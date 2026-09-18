@@ -2,7 +2,7 @@
 """Run the MiniAcc integrated pipeline.
 
 Default: one timed request (about 2.5 minutes) with the full pipeline
-(AdaLN sidecar + INT8 weights via ComfyUI + SageAttention).
+(AdaLN sidecar + INT8 weight kernel + SageAttention).
 
   python pipeline/serve.py --output outputs/demo
 
